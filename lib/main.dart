@@ -27,17 +27,16 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Adimera',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       home: AnimatedSplashScreen(
-        splashIconSize: 220,
-        duration: 3000,
-        splash: Image.asset("assets/logo.png"),
-        nextScreen: Connectivity(),
-        splashTransition: SplashTransition.rotationTransition,
-      ),
+          splashIconSize: 180,
+          duration: 3000,
+          splash: Image.asset("assets/logo.png"),
+          nextScreen: Connectivity(),
+          splashTransition: SplashTransition.scaleTransition),
     );
   }
 }

@@ -10,6 +10,7 @@ class Connectivity extends StatefulWidget {
 class _ConnectivityState extends State<Connectivity> {
   @override
   Widget build(BuildContext context) {
+    Color mainColor = Color(0xffffaf33);
     return Scaffold(body: Builder(builder: (BuildContext context) {
       return OfflineBuilder(
           connectivityBuilder: (BuildContext context,
@@ -23,18 +24,17 @@ class _ConnectivityState extends State<Connectivity> {
                     left: 0.0,
                     right: 0.0,
                     height: 30.0,
-                    bottom: 2,
+                    bottom: 60,
                     child: AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
-                        color: connected
-                            ? Colors.transparent
-                            : Colors.amberAccent.withOpacity(0.5),
+                        color: connected ? Colors.transparent : mainColor,
                         child: connected
                             ? Center(child: Text(''))
                             : Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Text('No internet Connection'),
+                                  Text('No internet Connection',
+                                      style: TextStyle(color: Colors.white)),
                                   SizedBox(
                                     width: 10,
                                   ),
