@@ -20,39 +20,39 @@ class _ConnectivityState extends State<Connectivity> {
               fit: StackFit.expand,
               children: <Widget>[
                 child,
-                Positioned(
-                    left: 0.0,
-                    right: 0.0,
-                    height: 30.0,
-                    bottom: 60,
-                    child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 300),
-                        color: connected ? Colors.transparent : mainColor,
-                        child: connected
-                            ? Center(child: Text(''))
-                            : Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text('No internet Connection',
-                                      style: TextStyle(color: Colors.white)),
-                                  SizedBox(
-                                    width: 10,
+                AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    color: connected ? Colors.transparent : Colors.white,
+                    child: connected
+                        ? Homepage()
+                        : Container(
+                            height: MediaQuery.of(context).size.height,
+                            width: MediaQuery.of(context).size.width,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 40,
+                                  height: 40,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2.0,
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        mainColor),
                                   ),
-                                  SizedBox(
-                                    width: 12,
-                                    height: 12,
-                                    child: CircularProgressIndicator(
-                                      strokeWidth: 2.0,
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                          Colors.white),
-                                    ),
-                                  )
-                                ],
-                              )))
+                                ),
+                                SizedBox(
+                                  height: 25,
+                                ),
+                                Text('No Internet Connection',
+                                    style: TextStyle(
+                                        color: mainColor, fontSize: 18)),
+                              ],
+                            ),
+                          ))
               ],
             );
           },
-          child: Homepage());
+          child: Container());
     })
         //
         );
