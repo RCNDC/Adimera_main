@@ -13,7 +13,8 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   Color mainColor = Color(0xffC16A1B);
-  final Completer<WebViewController> _controller = 
+  // ignore: unused_field
+  final Completer<WebViewController> _controller =
       Completer<WebViewController>();
   // Completer<WebViewController>();
   @override
