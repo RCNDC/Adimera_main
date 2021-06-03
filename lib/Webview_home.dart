@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 // import 'package:flutter_downloader/flutter_downloader.dart';
@@ -15,7 +16,7 @@ class _WebviewState extends State<Webview> {
   InAppWebViewController _webViewController;
   double progress = 0;
   String url = '';
-  Color mainColor = Color(0xffFFAB25);
+  Color mainColor = Color(0xffFFA728);
   final GlobalKey webViewKey = GlobalKey();
   // Future<Directory?>? _externalDocumentsDirectory =
   //     getExternalStorageDirectory();
@@ -47,7 +48,7 @@ class _WebviewState extends State<Webview> {
     super.initState();
 
     pullToRefreshController = PullToRefreshController(
-      options: PullToRefreshOptions(color: Colors.blue),
+      options: PullToRefreshOptions(color: mainColor),
       onRefresh: () async {
         if (Platform.isAndroid) {
           _webViewController?.reload();
@@ -75,7 +76,7 @@ class _WebviewState extends State<Webview> {
               child: InAppWebView(
                 key: webViewKey,
                 initialUrlRequest: URLRequest(
-                  url: Uri.parse("https://adimera.com/#/"),
+                  url: Uri.parse("https://adimera.com"),
                   headers: {},
                 ),
                 initialOptions: options,
@@ -136,12 +137,12 @@ class _WebviewState extends State<Webview> {
                 )
               : Center(),
           Padding(
-            padding: const EdgeInsets.only(top: 5),
+            padding: const EdgeInsets.only(bottom: 25, left: 5),
             child: Align(
               alignment: Alignment.topRight,
               child: IconButton(
                   icon: Icon(
-                    Icons.chevron_left,
+                    CupertinoIcons.chevron_back,
                     color: mainColor,
                     size: 30,
                   ),

@@ -12,8 +12,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  Color mainColor = Color(0xff603813);
-  final Completer<WebViewController> _controller =
+  Color mainColor = Color(0xffC16A1B);
+  final Completer<WebViewController> _controller = 
       Completer<WebViewController>();
   // Completer<WebViewController>();
   @override

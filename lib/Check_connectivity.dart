@@ -10,7 +10,7 @@ class Connectivity extends StatefulWidget {
 class _ConnectivityState extends State<Connectivity> {
   @override
   Widget build(BuildContext context) {
-    Color mainColor = Color(0xffffaf33);
+    Color mainColor = Color(0xffC16A1B);
     return Scaffold(body: Builder(builder: (BuildContext context) {
       return OfflineBuilder(
           connectivityBuilder: (BuildContext context,
